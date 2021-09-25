@@ -14,8 +14,7 @@ class Dashboard extends CI_Controller
     {
         $barang = $this->model_barang->find($id);
 
-        $data = array
-        (
+        $data = array(
             'id'      => $barang->id,
             'qty'     => 1,
             'price'   => $barang->harga,
@@ -24,5 +23,13 @@ class Dashboard extends CI_Controller
 
         $this->cart->insert($data);
         redirect('dashboard');
+    }
+
+    public function detail_keranjang()
+    {
+        $this->load->view('layouts/header');
+        $this->load->view('layouts/sidebar');
+        $this->load->view('keranjang');
+        $this->load->view('layouts/footer');
     }
 }

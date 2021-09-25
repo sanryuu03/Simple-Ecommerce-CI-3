@@ -39,13 +39,19 @@
         					<div class="card ml-3 mb-3" style="width: 16rem;">
         						<img src="<?php echo base_url() . '/uploads/' . $item->gambar ?>" class="card-img-top" alt="...">
         						<div class="card-body">
-        							<h5 class="card-title mb-1"><?php echo $item->nama_barang ?></h5>
-        							<small><?php echo $item->deskripsi ?></small>
+        							<h5 class="card-title mb-1">
+										<?php echo $item->nama_barang ?>
+									</h5>
+        							<small>
+										<?php echo $item->deskripsi ?>
+									</small>
         							<br>
-        							<span class="badge badge-success mb-3">Rp. <?php echo $item->harga ?></span>
+        							<span class="badge badge-success mb-3">
+										Rp. <?php echo number_format($item->harga), 0, ',', '.'  ?>
+									</span>
         							<br>
-        							<?php echo anchor(
-										'dashboard/add_to_cart/' . $item->id, '<div class = "btn btn-sm btn-primary" >add to cart</div>'
+        							<?php echo anchor('dashboard/add_to_cart/' . $item->id,
+									'<div class = "btn btn-sm btn-primary" >add to cart</div>'
 									) ?>
         							<a href="#" class="btn btn-sm btn-success">details</a>
         						</div>
