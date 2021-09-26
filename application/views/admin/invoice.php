@@ -17,7 +17,9 @@
             <td><?php echo $item->tgl_pesan ?></td>
             <td><?php echo $item->batas_bayar ?></td>
             <td>
-                <div class = " btn btn-sm btn-primary">Detail</div>
+                <?php echo anchor('admin/invoice/detail/' . $item->id,
+                '<div class = " btn btn-sm btn-primary">Detail</div>') 
+                ?>
             </td>
         </tr>
     <?php endforeach; ?>
