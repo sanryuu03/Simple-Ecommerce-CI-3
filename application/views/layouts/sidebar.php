@@ -34,19 +34,19 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/hp') ?>">
                     <i class="fas fa-fw fa-mobile"></i>
                     <span>HP</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/laptop') ?>">
                     <i class="fas fa-fw fa-laptop"></i>
                     <span>Laptop</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('kategori/audio') ?>">
                     <i class="fas fa-fw fa-headphones"></i>
                     <span>Audio</span></a>
             </li>
