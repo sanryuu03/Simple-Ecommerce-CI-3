@@ -10,12 +10,12 @@ class Dashboard extends CI_Controller
         $this->load->view('layouts/footer');
     }
 
-    public function add_to_cart($id)
+    public function add_to_cart($id_barang)
     {
-        $barang = $this->model_barang->find($id);
+        $barang = $this->model_barang->find($id_barang);
 
         $data = array(
-            'id'      => $barang->id,
+            'id'      => $barang->id_barang,
             'qty'     => 1,
             'price'   => $barang->harga,
             'name'    => $barang->nama_barang,
@@ -49,11 +49,20 @@ class Dashboard extends CI_Controller
 
     public function proses_pesanan()
     {
-        // akan menghapus keranjang belanja jika menekan tombol pesan 
-        $this->cart->destroy();
-        $this->load->view('layouts/header');
-        $this->load->view('layouts/sidebar');
-        $this->load->view('proses_pesanan');
-        $this->load->view('layouts/footer');
+        $is_processed = $this->model_invoice->index();
+        if($is_processed)
+        {
+            // akan menghapus keranjang belanja jika menekan tombol pesan 
+            $this->cart->destroy();
+    
+            $this->load->view('layouts/header');
+            $this->load->view('layouts/sidebar');
+            $this->load->view('proses_pesanan');
+            $this->load->view('layouts/footer');
+        }
+        else
+        {
+            echo "Maaf, pesanan anda gagal diproses";
+        }
     }
 }

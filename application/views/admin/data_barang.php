@@ -28,14 +28,14 @@
                     </div>
                 </td>
                 <td>
-                    <?php echo anchor('admin/data_barang/edit/' . $item->id, 
+                    <?php echo anchor('admin/data_barang/edit/' . $item->id_barang, 
                     '<div class="btn btn-primary btn-sm">
                         <i class="fa fa-edit"></i>
                     </div>') ?>
 
                 </td>
                 <td>
-                    <?php echo anchor('admin/data_barang/hapus/' . $item->id, 
+                    <?php echo anchor('admin/data_barang/hapus/' . $item->id_barang, 
                     '<div class="btn btn-danger btn-sm">
                         <i class="fa fa-trash"></i>
                     </div>') ?>

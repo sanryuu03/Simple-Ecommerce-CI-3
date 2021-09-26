@@ -45,7 +45,7 @@ class Data_barang extends CI_Controller
 
     public function edit($id)
     {
-        $where = array('id' => $id);
+        $where = array('id_barang' => $id);
         $data['barang'] = $this->model_barang->edit_barang($where, 'items')->result();
         $this->load->view('layouts_admin/header');
         $this->load->view('layouts_admin/sidebar');
@@ -55,7 +55,7 @@ class Data_barang extends CI_Controller
 
     public function update()
     {
-        $id          = $this->input->post('id');
+        $id          = $this->input->post('id_barang');
         $nama_barang = $this->input->post('nama_barang');
         $deskripsi   = $this->input->post('deskripsi');
         $kategori    = $this->input->post('kategori');
@@ -70,7 +70,7 @@ class Data_barang extends CI_Controller
         );
 
         $where = array(
-            'id' => $id
+            'id_barang' => $id
         );
 
         $this->model_barang->update_data($where, $data, 'items');
@@ -79,7 +79,7 @@ class Data_barang extends CI_Controller
 
     public function hapus($id)
     {
-        $where = array ('id' => $id);
+        $where = array ('id_barang' => $id);
         $this->model_barang->hapus_data($where, 'items');
         redirect('admin/data_barang/index');
     }

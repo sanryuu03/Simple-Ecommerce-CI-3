@@ -50,7 +50,7 @@
 										Rp. <?php echo number_format($item->harga), 0, ',', '.'  ?>
 									</span>
         							<br>
-        							<?php echo anchor('dashboard/add_to_cart/' . $item->id,
+        							<?php echo anchor('dashboard/add_to_cart/' . $item->id_barang,
 									'<div class = "btn btn-sm btn-primary" >add to cart</div>'
 									) ?>
         							<a href="#" class="btn btn-sm btn-success">details</a>

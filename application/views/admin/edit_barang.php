@@ -17,8 +17,8 @@
 
             <div class="for-group">
                 <label>Kategori</label>
-                <input type="hidden" name="id" 
-                class="form-control" value="<?php echo $item->id ?>">
+                <input type="hidden" name="id_barang" 
+                class="form-control" value="<?php echo $item->id_barang ?>">
                 <input type="text" name="kategori" 
                 class="form-control" value="<?php echo $item->kategori ?>">
             </div>
