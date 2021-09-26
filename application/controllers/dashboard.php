@@ -38,4 +38,22 @@ class Dashboard extends CI_Controller
         $this->cart->destroy();
         redirect('dashboard/index');
     }
+
+    public function pembayaran()
+    {
+        $this->load->view('layouts/header');
+        $this->load->view('layouts/sidebar');
+        $this->load->view('pembayaran');
+        $this->load->view('layouts/footer');
+    }
+
+    public function proses_pesanan()
+    {
+        // akan menghapus keranjang belanja jika menekan tombol pesan 
+        $this->cart->destroy();
+        $this->load->view('layouts/header');
+        $this->load->view('layouts/sidebar');
+        $this->load->view('proses_pesanan');
+        $this->load->view('layouts/footer');
+    }
 }
